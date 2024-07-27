@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="390.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sweetsystem.HelloController">
+   <children>
+      <ImageView fitHeight="390.0" fitWidth="690.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../photo/adminpage.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="profileimage" fitHeight="79.0" fitWidth="78.0" layoutX="595.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="Ademail" layoutX="233.0" layoutY="30.0" prefHeight="27.0" prefWidth="266.0" />
+      <Label fx:id="AdPass" layoutX="232.0" layoutY="92.0" prefHeight="27.0" prefWidth="266.0" />
+      <Label fx:id="AdName" layoutX="232.0" layoutY="158.0" prefHeight="27.0" prefWidth="266.0" />
+      <Label fx:id="AdInfo" layoutX="233.0" layoutY="219.0" prefHeight="27.0" prefWidth="266.0" />
+      <Button fx:id="AdminEdit" layoutX="247.0" layoutY="334.0" mnemonicParsing="false" onAction="#Adminedit" prefHeight="41.0" prefWidth="235.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="AdUsers" layoutY="5.0" mnemonicParsing="false" onAction="#Adminusers" prefHeight="50.0" prefWidth="185.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="AdStores" layoutY="56.0" mnemonicParsing="false" onAction="#Adminstores" prefHeight="50.0" prefWidth="185.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="AdProduct" layoutY="110.0" mnemonicParsing="false" onAction="#Adminproduct" prefHeight="41.0" prefWidth="185.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="AdOrder" layoutY="158.0" mnemonicParsing="false" onAction="#Adminorder" prefHeight="50.0" prefWidth="185.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="AdReport" layoutY="208.0" mnemonicParsing="false" onAction="#AdminReports" prefHeight="50.0" prefWidth="185.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="Adlogout" layoutY="263.0" mnemonicParsing="false" onAction="#AdminLogout" prefHeight="58.0" prefWidth="185.0" style="-fx-background-color: transparent;" />
+      <Label fx:id="AdAddress" layoutX="232.0" layoutY="292.0" prefHeight="27.0" prefWidth="266.0" />
+   </children>
+</AnchorPane>

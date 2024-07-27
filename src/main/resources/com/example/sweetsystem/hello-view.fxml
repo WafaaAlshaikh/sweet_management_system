@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sweetsystem.HelloController">
+   <children>
+      <ImageView fitHeight="427.0" fitWidth="690.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../photo/loginPage.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="emailtxt" layoutX="312.0" layoutY="158.0" prefHeight="33.0" prefWidth="323.0" style="-fx-background-color: transparent;" />
+      <TextField fx:id="passtxt" layoutX="322.0" layoutY="238.0" prefHeight="33.0" prefWidth="305.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="signup" layoutX="484.0" layoutY="80.0" mnemonicParsing="false" onAction="#signupButton" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="forgot" layoutX="322.0" layoutY="285.0" mnemonicParsing="false" onAction="#forgotPassButton" prefHeight="25.0" prefWidth="185.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="signin" layoutX="351.0" layoutY="329.0" mnemonicParsing="false" onAction="#signinButton" prefHeight="41.0" prefWidth="241.0" style="-fx-background-color: transparent;" />
+   </children>
+</AnchorPane>
