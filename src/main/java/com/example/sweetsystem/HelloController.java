@@ -10,10 +10,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 
 import javafx.scene.control.Label;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -55,7 +52,6 @@ import javafx.scene.control.SpinnerValueFactory;
 
 
 
-
 public class HelloController {
     DatabaseConnection databaseConnection = new DatabaseConnection();
     Connection connection = databaseConnection.getConnection();
@@ -68,11 +64,57 @@ public class HelloController {
     @FXML
     private TextField passtxt;
 
+
     @FXML
     private Button signin;
 
     @FXML
     private Button signup;
+
+    @FXML
+    public void initialize() {
+        // Set up the columns in the table
+        useridc.setCellValueFactory(new PropertyValueFactory<>("userId"));
+        usernamec.setCellValueFactory(new PropertyValueFactory<>("username"));
+        userpassc.setCellValueFactory(new PropertyValueFactory<>("password"));
+        useremailc.setCellValueFactory(new PropertyValueFactory<>("email"));
+        userrolec.setCellValueFactory(new PropertyValueFactory<>("role"));
+        userinfoc.setCellValueFactory(new PropertyValueFactory<>("contactInfo"));
+        useraddressc.setCellValueFactory(new PropertyValueFactory<>("address"));
+        userimagec.setCellValueFactory(new PropertyValueFactory<>("image"));
+
+        // Load data from the database
+        try {
+            Usertable.setItems(getUsers());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Function to get data from the database
+    private ObservableList<User> getUsers() throws SQLException {
+        ObservableList<User> users = FXCollections.observableArrayList();
+
+        // Database connection
+        Connection conn = DatabaseConnection.getConnection();
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM sweet_system.users");
+
+        while (rs.next()) {
+            users.add(new User(
+                    rs.getInt("user_id"),
+                    rs.getString("username"),
+                    rs.getString("password"),
+                    rs.getString("email"),
+                    rs.getString("role"),
+                    rs.getString("contact_info"),
+                    rs.getString("address"),
+                    rs.getString("image")
+            ));
+        }
+
+        return users;
+    }
 
     @FXML
     void forgotPassButton(ActionEvent event) {
@@ -112,7 +154,15 @@ public class HelloController {
     }
     @FXML
     void signupButton(ActionEvent event) {
-
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("signup.fxml"));
+            AnchorPane root = loader.load();
+            Stage stage = (Stage) signup.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -195,7 +245,16 @@ public class HelloController {
 
     @FXML
     void Adminusers(ActionEvent event) {
-
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("UsersAdmin.fxml"));
+            AnchorPane root = loader.load();
+            initialize();
+            Stage stage = (Stage) AdUsers.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -226,6 +285,105 @@ public class HelloController {
             e.printStackTrace();
         }
         return null;
+    }
+
+
+    @FXML
+    private Button selectimg;
+
+    @FXML
+    private Button sign;
+
+    @FXML
+    private TextField signaddresstxt;
+
+    @FXML
+    private TextField signcontacttxt;
+
+    @FXML
+    private TextField signemailtxt;
+
+    @FXML
+    private TextField signnametxt;
+
+    @FXML
+    private TextField signpasstxt;
+
+    @FXML
+    private ComboBox<?> signroletxt;
+
+
+
+    @FXML
+    void selectphoto(ActionEvent event) {
+
+    }
+
+    @FXML
+    void signupbuttonn(ActionEvent event) {
+
+    }
+
+
+    @FXML
+    private TableView<User> Usertable =new TableView<>();
+
+    @FXML
+    private Button addb;
+
+    @FXML
+    private Button backarrow;
+
+    @FXML
+    private Button deleteb;
+
+    @FXML
+    private Button editb;
+
+    @FXML
+    private ChoiceBox<?> searchby;
+
+    @FXML
+    private TextField searchuser;
+
+    @FXML
+    private TableColumn<User, Integer> useridc=new TableColumn<>();
+
+    @FXML
+    private TableColumn<User, String> usernamec=new TableColumn<>();
+
+    @FXML
+    private TableColumn<User, String> userpassc =new TableColumn<>();
+
+    @FXML
+    private TableColumn<User, String> useremailc =new TableColumn<>();
+
+    @FXML
+    private TableColumn<User, String> userrolec =new TableColumn<>();
+
+    @FXML
+    private TableColumn<User, String> userinfoc =new TableColumn<>();
+
+    @FXML
+    private TableColumn<User, String> useraddressc =new TableColumn<>();
+
+    @FXML
+    private TableColumn<User, String> userimagec =new TableColumn<>();
+
+
+    @FXML
+    void adduser(ActionEvent event) {
+
+    }
+
+    @FXML
+    void deleteuser(ActionEvent event) {
+
+    }
+
+    @FXML
+    void edituser(ActionEvent event) {
+
     }
 
 }

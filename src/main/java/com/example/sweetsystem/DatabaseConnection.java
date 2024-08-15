@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class DatabaseConnection {
-    public Connection getConnection() {
+    public static Connection getConnection() {
         Connection connection;
         try {
             connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "1482003");

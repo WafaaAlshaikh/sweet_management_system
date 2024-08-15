@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="390.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sweetsystem.HelloController">
+   <children>
+      <ImageView fitHeight="390.0" fitWidth="690.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../photo/signup.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="signemailtxt" layoutX="184.0" layoutY="94.0" prefHeight="27.0" prefWidth="215.0" style="-fx-background-color: transparent;" />
+      <TextField fx:id="signpasstxt" layoutX="446.0" layoutY="94.0" prefHeight="27.0" prefWidth="215.0" style="-fx-background-color: transparent;" />
+      <TextField fx:id="signnametxt" layoutX="184.0" layoutY="167.0" prefHeight="27.0" prefWidth="215.0" style="-fx-background-color: transparent;" />
+      <TextField fx:id="signaddresstxt" layoutX="446.0" layoutY="167.0" prefHeight="27.0" prefWidth="215.0" style="-fx-background-color: transparent;" />
+      <TextField fx:id="signcontacttxt" layoutX="446.0" layoutY="256.0" prefHeight="27.0" prefWidth="215.0" style="-fx-background-color: transparent;" />
+      <ComboBox fx:id="signroletxt" layoutX="175.0" layoutY="257.0" prefHeight="25.0" prefWidth="222.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="sign" layoutX="286.0" layoutY="302.0" mnemonicParsing="false" onAction="#signupbuttonn" prefHeight="39.0" prefWidth="238.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="selectimg" layoutX="539.0" layoutY="358.0" mnemonicParsing="false" onAction="#selectphoto" prefHeight="27.0" prefWidth="151.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="Adlogout" layoutX="397.0" layoutY="345.0" mnemonicParsing="false" onAction="#AdminLogout" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: transparent;" />
+      <ImageView fitHeight="71.0" fitWidth="90.0" layoutX="597.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

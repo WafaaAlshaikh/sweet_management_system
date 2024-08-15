@@ -3,7 +3,7 @@ package com.example.sweetSystem.AcceptanceTest;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
-import org.example.TestFeatures;
+import com.example.sweetsystem.TestFeatures;
 
 import static org.junit.Assert.assertEquals;
 
